@@ -1,0 +1,421 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>user-frontend</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Logo</a>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Logo</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-lg-2" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-lg-2" href="#">Help</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-lg-2" href="#">Upload</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <a href="#" class="login-button">Login</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="hero-section">
+    <div class="container">
+        <div class="row justify-content-center my-5">
+            <div class="col-md-8">
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Search">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Location</button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="#">Current location</a></li>
+                  <li><a class="dropdown-item" href="#">By Pincode</a></li>
+                  <li><a class="dropdown-item" href="#">By Name</a></li>
+                </ul>
+                <button class="btn btn-outline-secondary" type="button"><i class="fas fa-map-marker-alt"></i></button>
+              </div>
+            </div>
+          </div>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <section class="whole-up">
+            <div class="wrapper">
+              <header>Upload Your File</header>
+              <form action="#">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p>Browse File to Upload</p>
+              </form>
+            </div>
+          </section>
+        </div>
+        <div class="col-md-6">
+          <div class="two">
+            <section class="progress-area">
+              <li class="row">
+                <i class="fas fa-file-alt"></i>
+                <div class="content">
+                  <div class="details">
+                    <span class="name">image_01.png - Uploading</span>
+                    <span class="percent">50%</span>
+                  </div>
+                  <div class="progress-bar bg-light">
+                    <div class="progress bg-primary" style="width: 50%;"></div>
+                  </div>
+                </div>
+              </li>
+            </section>
+            <section class="upload-area">
+              <li class="row">
+                <div class="content">
+                  <i class="fas fa-file-alt"></i>
+                  <div class="details">
+                    <span class="name">image_01.png - Uploaded</span>
+                    <span class="size">70kb</span>
+                  </div>
+                </div>
+                
+              </li>
+            </section>
+            
+          </div>
+        </div>
+      </div>
+      <div class="container text-center mt-3">
+        <button class="btn btn-primary btn-lg">Upload</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/about.css" />
+    <title>About Us</title>
+    <style>
+      body {
+        padding-top: 56px;
+        font-family: "Roboto", sans-serif;
+      }
+
+      .navbar {
+        background-color: white;
+        height: 80px;
+      }
+
+      .navbar-brand {
+        font-weight: 500;
+        color: #009978;
+        font-size: 24px;
+        transition: 0.3s;
+      }
+
+      .login-button {
+        background-color: #009978;
+        color: #fff;
+        font-size: 14px;
+        padding: 8px 20px;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: 0.3s background-color;
+      }
+
+      .login-button:hover {
+        background-color: #00b383;
+      }
+
+      .navbar-toggler {
+        border: none;
+        font-size: 1.25rem;
+      }
+
+      .navbar-toggler:focus {
+        box-shadow: none;
+        outline: none;
+      }
+
+      .nav-link {
+        color: #666777;
+        font-weight: 500;
+        position: relative;
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+        color: #000;
+      }
+
+      @media (min-width: 991px) {
+        .nav-link::before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 0;
+          height: 2px;
+          background-color: #009978;
+          visibility: hidden;
+          transition: 0.3s ease-in-out;
+        }
+
+        .nav-link:hover:before,
+        .nav-link.active:before {
+          width: 100%;
+          visibility: visible;
+        }
+      }
+
+      .about-section {
+        background: url('https://img.freepik.com/free-vector/abstract-white-background_23-2148810888.jpg') no-repeat;
+        background-size: cover;
+        padding: 60px 0;
+        background-color: #f8f9fa;
+        
+      }
+
+      .about-section .display-4 {
+        font-weight: 700;
+        margin-bottom: 30px;
+      }
+
+      .about-section .lead {
+        font-size: 1.25rem;
+        margin-bottom: 50px;
+      }
+
+      .card {
+        border: none;
+        transition: transform 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+      }
+
+      .card-body {
+        padding: 30px;
+      }
+
+      .card-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      .card-text {
+        font-size: 1rem;
+      }
+
+      .footer {
+        background-color: #343a40;
+        color: #fff;
+        padding: 20px 0;
+      }
+
+      @media (max-width: 767px) {
+        .about-section {
+          padding: 30px 0;
+        }
+
+        .about-section .display-4 {
+          font-size: 2.5rem;
+        }
+
+        .about-section .lead {
+          font-size: 1rem;
+        }
+
+        .card-body {
+          padding: 20px;
+        }
+
+        .card-title {
+          font-size: 1.25rem;
+        }
+
+        .card-text {
+          font-size: 0.875rem;
+        }
+      }
+       .footer {
+        background-color:  #00b383;
+        color: #fff;
+        
+      }
+
+      .footer span {
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Logo</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Logo</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a
+                  class="nav-link mx-lg-2"
+                  aria-current="page"
+                  href="index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active mx-lg-2" href="index1.html"
+                  >About Us</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="index5.html">Help</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="index6.html">Upload</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="index2.html">Download</a>
+              </li>
+            </ul>
+            <a href="#" class="login-button d-lg-none mt-3">Login</a>
+          </div>
+        </div>
+        <a href="index3.html" class="login-button d-none d-lg-inline-block"
+          >Login</a
+        >
+      </div>
+    </nav>
+
+    <section class="about-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <h1 class="display-4">About Us</h1>
+            <p class="lead">
+              Welcome to our platform, where we bridge the gap between users and
+              print shopkeepers. Our mission is to simplify the process of
+              printing by allowing users to upload their files, which can then
+              be downloaded and printed by shopkeepers. We aim to make printing
+              hassle-free and accessible for everyone.
+            </p>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-md-4 text-center">
+            <div class="card mb-4 shadow-sm">
+              <div class="card-body">
+                <i class="fas fa-users fa-3x mb-3"></i>
+                <h5 class="card-title">Our Team</h5>
+                <p class="card-text">
+                  Our team is composed of professionals who are dedicated to
+                  providing the best service. We are passionate about making
+                  printing services easy and convenient for our users.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 text-center">
+            <div class="card mb-4 shadow-sm">
+              <div class="card-body">
+                <i class="fas fa-lightbulb fa-3x mb-3"></i>
+                <h5 class="card-title">Our Vision</h5>
+                <p class="card-text">
+                  We envision a world where printing is no longer a tedious
+                  task. Our platform is designed to make file uploading and
+                  downloading seamless, ensuring that users can get their
+                  printouts quickly and efficiently.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 text-center">
+            <div class="card mb-4 shadow-sm">
+              <div class="card-body">
+                <i class="fas fa-handshake fa-3x mb-3"></i>
+                <h5 class="card-title">Our Values</h5>
+                <p class="card-text">
+                  We value integrity, efficiency, and customer satisfaction. We
+                  strive to build long-lasting relationships with our users and
+                  print shopkeepers based on trust and mutual respect.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer  py-3">
+      <div class="container text-center">
+        <span>&copy; 2024 Your Company. All rights reserved.</span>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

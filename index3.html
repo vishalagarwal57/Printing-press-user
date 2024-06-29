@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style3.css">
+    <title>Printing Press Login</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .form-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+        .form-container h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .form-container h4 {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #666;
+        }
+        .form-container .form-control {
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+        .form-container a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .form-container a:hover {
+            text-decoration: underline;
+        }
+        .image-container img {
+            width: 100%;
+            height: 430px; /* adjusted to lowercase 'px' */
+            border-radius: 15px;
+            box-shadow: 12px 12px 22px lightslategray;
+        }
+        @media (max-width: 768px) {
+            .form-container {
+                padding: 20px;
+                border-radius: 10px;
+            }
+            .image-container img {
+                box-shadow: 6px 6px 11px lightslategray;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Logo</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Logo</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link"  href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-lg-2" href="index1.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-lg-2" href="index5.html">Contact</a>
+            </li>
+            
+          </ul>
+          <a href="#" class="login-button d-lg-none mt-3">Sign Up</a>
+        </div>
+      </div>
+      <a href="index4.html" class="login-button d-none d-lg-inline-block">Sign Up</a>
+    </div>
+  </nav>
+  
+<section class="form-section">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-5 image-container mb-4 mb-lg-0">
+                <img src="image/login2.avif" class="img-fluid" alt="Login Image">
+            </div>
+            <div class="col-lg-7 form-container px-5 pt-5">
+                <h1 class="font-weight-bold py-3">Login</h1>
+                <h4>Sign into your account</h4>
+                <form id="loginForm">
+                    <input type="text" id="emailOrPhone" placeholder="Email Address or Phone Number" class="form-control">
+                    <input type="password" id="password" placeholder="***********" class="form-control">
+                    <button type="button" class="btn btn-primary mt-3 mb-3" onclick="validateForm()">Login</button>
+                    <a href="#">Forgot password?</a>
+                    <p>Don't have an account? <a href="signup.html">Register here</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function validateForm() {
+        const emailOrPhone = document.getElementById("emailOrPhone").value;
+        const password = document.getElementById("password").value;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const phoneRegex = /^\d{10}$/; // Adjust regex as per your phone number validation needs
+
+        if (!emailOrPhone) {
+            alert("Please enter your email address or phone number.");
+            return false;
+        }
+
+        if (!(emailRegex.test(emailOrPhone) || phoneRegex.test(emailOrPhone))) {
+            alert("Please enter a valid email address or phone number.");
+            return false;
+        }
+
+        if (!password || password.length < 8) {
+            alert("Please enter a password that is at least 8 characters long.");
+            return false;
+        }
+
+        alert("Form submitted successfully!");
+        return true;
+    }
+</script>
+
+</body>
+</html>

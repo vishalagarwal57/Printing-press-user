@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="styles/home.css">
+  <style>
+    /* Custom styles for homepage */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+      color: #495057;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: white;
+      height: 70px;
+    }
+
+    .navbar-brand {
+      font-weight: 500;
+      color: #009978;
+      font-size: 24px;
+      transition: 0.3s;
+    }
+
+    .navbar-toggler {
+      border: none;
+      font-size: 1.25rem;
+    }
+
+    .navbar-toggler:focus {
+      box-shadow: none;
+      outline: none;
+    }
+
+    .navbar-nav {
+      justify-content: flex-end; /* Align menu items to the right */
+      flex-grow: 1; /* Expand menu items to take remaining space */
+    }
+
+    .nav-item {
+      padding: 0 2px; /* Adjust spacing between menu items */
+    }
+
+    .nav-link {
+      color: #666777;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #000;
+    }
+
+    @media (min-width: 991px) {
+      .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: #009978;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+      }
+
+      .nav-link:hover:before,
+      .nav-link.active:before {
+        width: 100%;
+        visibility: visible;
+      }
+    }
+
+    .jumbotron {
+      background: linear-gradient(to right, rgba(0, 150, 136, 0.8), rgba(0, 0, 0, 0.6)), url('images/background.jpg') no-repeat center center/cover;
+      min-height: 100vh; /* Ensure minimum viewport height */
+      display: flex;
+      align-items: center;
+      justify-content: center; /* Center content horizontally */
+      text-align: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden; /* Ensure animation stays within bounds */
+    }
+
+    .jumbotron .container {
+      max-width: 1200px; /* Limit max width of content */
+    }
+
+    .jumbotron h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    }
+
+    .jumbotron p {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    }
+
+    .jumbotron .btn-primary {
+      font-size: 1.2rem;
+      padding: 10px 30px;
+      border-radius: 30px;
+      margin-top: 20px;
+      background-color: #009688;
+      border-color: #009688;
+      transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+    }
+
+    .jumbotron .btn-primary:hover {
+      background-color: #00796b;
+      border-color: #00796b;
+      transform: scale(1.1);
+    }
+
+    .jumbotron .image-container{
+    width: 100%;
+            height: 500px;
+            border-radius: 15px;
+            box-shadow: 12px 12px 22px lightslategray;
+    }
+
+    .feature-section {
+      padding: 60px 0;
+      background-color: #ffffff;
+    }
+
+    .feature-section h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 50px;
+      color: #009688;
+    }
+
+    .feature-card {
+      background-color: #f5f5f5;
+      border-radius: 10px;
+      padding: 30px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .feature-card h3 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #009688;
+    }
+
+    .feature-card p {
+      font-size: 1.1rem;
+      line-height: 1.8rem;
+      color: #666666;
+    }
+
+    .footer {
+      background-color: #00b383;
+      color: #ffffff;
+      padding: 20px 0;
+    }
+
+    .footer p {
+      margin-bottom: 0;
+    }
+
+    /* Offcanvas Styles */
+    .offcanvas {
+      background-color: #f8f9fa; /* Adjust as needed */
+    }
+
+    .offcanvas-header {
+      background-color: #009978; /* Adjust as needed */
+      color: white; /* Adjust as needed */
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Logo</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="offcanvas offcanvas-end"
+        tabindex="-1"
+        id="offcanvasNavbar"
+        aria-labelledby="offcanvasNavbarLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Logo</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end pe-3">
+            <li class="nav-item">
+              <a
+                class="nav-link mx-lg-2"
+                aria-current="page"
+                href="index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-lg-2" href="index1.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-lg-2" href="index5.html">Help</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-lg-2" href="index6.html">Upload</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-lg-2" href="index2.html">Download</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="jumbotron">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="content">
+            <h1>Welcome to Our Platform</h1>
+            <p class="lead">
+              We bridge the gap between users and print shopkeepers, making printing hassle-free and accessible for everyone.
+            </p>
+            <a href="index3.html" class="btn btn-primary btn-lg">Get Started</a>
+          </div>
+        </div>
+        <div class="col-lg-6 p-0">
+          <!-- Image removed in phone view -->
+          <div class="image-container d-none d-lg-block"> <!-- Show image on large screens only -->
+            <img src="image/home3.avif" class="img-fluid" alt="Right Image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="feature-card" >
+            <h3 >Upload Files </h3>
+            <p>
+              Simplify printing by uploading your files effortlessly and securely.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card">
+            <h3>Quick Downloads</h3>
+            <p>
+              Browse and download files from our platform with just a few clicks.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card">
+            <h3>Customer Support</h3>
+            <p>
+              Need help? Our support team is here to assist you every step of the way.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container text-center">
+      <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
